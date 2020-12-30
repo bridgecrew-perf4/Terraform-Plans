@@ -5,7 +5,7 @@ variable "project" {
 }
 
 variable "credentials_file" { 
-  default = "../.terraform/terraform.json"
+  default = "keys/CloudTesting.json"
 }
 
 variable "image_name" { 
