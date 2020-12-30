@@ -15,6 +15,7 @@ provider "google-beta" {
   zone                 = "us-west1-b"
 }
 
+// Create Network
 resource "google_compute_network" "net" {
   provider             = google-beta
   name                 = var.name
@@ -22,6 +23,7 @@ resource "google_compute_network" "net" {
   description          = "Default Network for ${var.name}."
 }
 
+//Create VM Instance
 resource "google_compute_instance_from_machine_image" "vm" {
   provider 	           = google-beta
   name                 = var.name
@@ -38,6 +40,7 @@ resource "google_compute_instance_from_machine_image" "vm" {
   }
 }
 
+//Create Firewall Rules
 resource "google_compute_firewall" "fw" {
   provider             = google-beta
   project              = var.project
